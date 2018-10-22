@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DRMConnectionString":  "server=localhost;Database=DRMDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  }
+}

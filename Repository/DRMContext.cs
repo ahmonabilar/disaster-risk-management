@@ -8,8 +8,12 @@ using Repository.Entities;
 
 namespace Repository
 {
-    public class DRMContext : DbContext 
+  public class DRMContext : DbContext
+  {
+    public DRMContext(DbContextOptions<DRMContext> options) : base (options)
     {
-        public DbSet<Test> Tests { get; set; }
+
     }
+    public DbSet<Test> Tests { get; set; }
+  }
 }
