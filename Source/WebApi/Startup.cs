@@ -1,8 +1,8 @@
 ﻿using Drm.Data;
 using Drm.Data.Entities;
+using Drm.Data.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +30,8 @@ namespace Drm.WebApi
                         .AddEntityFrameworkStores<DRMContext>();
 
             services.AddTransient<DRMSeeder>();
+
+            services.AddScoped<IDrmRepository<Test>, TestRepository>();
 
             services.AddMvc();
         }
