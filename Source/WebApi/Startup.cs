@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Drm.Repository;
+﻿using Drm.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Drm.WebApi
 {
-  public class Startup
+    public class Startup
   {
     private readonly IConfiguration _config;
 
@@ -26,7 +21,7 @@ namespace Drm.WebApi
     {
       services.AddDbContext<DRMContext>(cfg =>
       {
-        cfg.UseSqlServer(_config.GetConnectionString("DRMConnectionString"), opt => opt.MigrationsAssembly("WebApi"));
+        cfg.UseSqlServer(_config.GetConnectionString("DRMConnectionString"), opt => opt.MigrationsAssembly("Drm.WebApi"));
       });
 
       services.AddTransient<DRMSeeder>();

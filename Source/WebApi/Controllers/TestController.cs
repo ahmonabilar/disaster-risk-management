@@ -1,14 +1,12 @@
-﻿using Drm.Repository;
-using Drm.Repository.Entities;
+﻿using Drm.Data;
+using Drm.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Drm.WebApi.Controllers
 {
-  [Route("api/[Controller]")]
+    [Route("api/[Controller]")]
   public class TestController : Controller
   {
     private readonly DRMContext _ctx;

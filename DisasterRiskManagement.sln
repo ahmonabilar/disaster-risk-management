@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.WebApi", "Source\WebApi\Drm.WebApi.csproj", "{1C56B6A7-6373-472E-AB61-2A1FC107D31A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.Repository", "Repository\Drm.Repository.csproj", "{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.Data", "Source\Data\Drm.Data.csproj", "{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

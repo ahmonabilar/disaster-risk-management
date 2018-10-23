@@ -1,4 +1,4 @@
-﻿using Drm.Repository.Entities;
+﻿using Drm.Data.Entities;
 using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -8,7 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Drm.Repository
+namespace Drm.Data
 {
   public class DRMSeeder
   {
