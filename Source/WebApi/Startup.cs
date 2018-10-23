@@ -1,6 +1,8 @@
 ﻿using Drm.Data;
+using Drm.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +26,9 @@ namespace Drm.WebApi
                 cfg.UseSqlServer(_config.GetConnectionString("DRMConnectionString"), opt => opt.MigrationsAssembly(typeof(Startup).Namespace));
             });
 
+            services.AddIdentity<DrmUser, DrmRole>()
+                        .AddEntityFrameworkStores<DRMContext>();
+
             services.AddTransient<DRMSeeder>();
 
             services.AddMvc();
@@ -32,11 +37,11 @@ namespace Drm.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //if (env.IsDevelopment())
-            //{
-            //    app.UseDeveloperExceptionPage();
-            //}
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+//            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 

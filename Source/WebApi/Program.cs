@@ -25,7 +25,7 @@ namespace Drm.WebApi
       {
         var seeder = scope.ServiceProvider.GetService<DRMSeeder>();
 
-        seeder.Seed();
+        seeder.SeedAsync().Wait();
       }
 
     }
