@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Drm.Repository.Entities;
 using Microsoft.EntityFrameworkCore;
-using Repository.Entities;
 
-namespace Repository
+namespace Drm.Repository
 {
   public class DRMContext : DbContext
   {

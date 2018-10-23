@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AssemblyName>WebApi</AssemblyName>
-    <RootNamespace>WebApi</RootNamespace>
+    <AssemblyName>Drm.WebApi</AssemblyName>
+    <RootNamespace>Drm.WebApi</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Repository\Repository.csproj" />
+    <ProjectReference Include="..\..\Repository\Drm.Repository.csproj" />
   </ItemGroup>
 
 </Project>

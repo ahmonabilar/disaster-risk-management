@@ -1,14 +1,14 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Drm.Repository.Entities;
+using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Repository.Entities;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Repository
+namespace Drm.Repository
 {
   public class DRMSeeder
   {
@@ -40,8 +40,6 @@ namespace Repository
 
         _ctx.SaveChanges();
       }
-
-
     }
   }
 }

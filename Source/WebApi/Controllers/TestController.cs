@@ -1,12 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Repository;
-using Repository.Entities;
+﻿using Drm.Repository;
+using Drm.Repository.Entities;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApi.Controllers
+namespace Drm.WebApi.Controllers
 {
   [Route("api/[Controller]")]
   public class TestController : Controller
