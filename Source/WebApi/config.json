@@ -1,5 +1,11 @@
 {
-  "ConnectionStrings": {
-    "DRMConnectionString":  "server=localhost;Database=DRMDb;Integrated Security=true;MultipleActiveResultSets=true;"
-  }
+    "ConnectionStrings": {
+        "DRMConnectionString": "server=localhost;Database=DRMDb;Integrated Security=true;MultipleActiveResultSets=true;"
+    },
+    "Tokens": {
+        "Key": "dfasdfjoretoewqritye09irfgosdpafadf",
+        "ExpirationInMinutes": "30",
+        "Issuer": "localhost",
+        "Audience":  "users"
+    }
 }

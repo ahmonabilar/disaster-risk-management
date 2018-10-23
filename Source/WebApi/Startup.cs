@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Drm.WebApi
 {
@@ -29,6 +31,18 @@ namespace Drm.WebApi
             services.AddIdentity<DrmUser, DrmRole>()
                         .AddEntityFrameworkStores<DRMContext>();
 
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer(cfg =>
+                {
+                    cfg.TokenValidationParameters = new TokenValidationParameters()
+                    {
+                        ValidIssuer = _config["Tokens:Issuer"],
+                        ValidAudience = _config["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Tokens:Key"]))
+                    };
+                });
+
             services.AddTransient<DRMSeeder>();
 
             services.AddScoped<IDrmRepository<Test>, TestRepository>();
@@ -43,14 +57,20 @@ namespace Drm.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/error");
+            }
 //            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 
+            app.UseAuthentication();
+
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",
-            "/{controller}/{action}/{id?}",
+            "{controller}/{action}/{id?}",
             new { Controller = "App", Action = "Index" });
             });
 
