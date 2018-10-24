@@ -19,6 +19,7 @@ namespace Drm.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Editor")]
         public IEnumerable<Test> Get()
         {
             return _testRepository.GetAll();

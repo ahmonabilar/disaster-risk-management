@@ -1,6 +1,7 @@
 ﻿using Drm.Data;
 using Drm.Data.Entities;
 using Drm.Data.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,11 +29,12 @@ namespace Drm.WebApi
                 cfg.UseSqlServer(_config.GetConnectionString("DRMConnectionString"), opt => opt.MigrationsAssembly(typeof(Startup).Namespace));
             });
 
-            services.AddIdentity<DrmUser, DrmRole>()
-                        .AddEntityFrameworkStores<DRMContext>();
+            services.AddIdentity<DrmUser, DrmRole>(cfg =>{ 
+                    cfg.User.RequireUniqueEmail = true;
+                })
+                .AddEntityFrameworkStores<DRMContext>();
 
-            services.AddAuthentication()
-                .AddCookie()
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(cfg =>
                 {
                     cfg.TokenValidationParameters = new TokenValidationParameters()
@@ -61,7 +63,6 @@ namespace Drm.WebApi
             {
                 app.UseExceptionHandler("/error");
             }
-//            app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();
 
@@ -70,11 +71,9 @@ namespace Drm.WebApi
             app.UseMvc(cfg =>
             {
                 cfg.MapRoute("Default",
-            "{controller}/{action}/{id?}",
-            new { Controller = "App", Action = "Index" });
+                "{controller}/{action}/{id?}",
+                new { Controller = "Home", Action = "Index" });
             });
-
-
         }
     }
 }
