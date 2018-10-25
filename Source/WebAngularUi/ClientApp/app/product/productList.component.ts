@@ -9,17 +9,16 @@ import { DataService } from "../services/dataService";
 
 export class ProductList implements OnInit {
 
-	constructor(private data: DataService) {
-		this.products = data.products;
-	}
+    constructor(private data: DataService) {
+        this.products = data.products;
+    }
 
-	public products = [];
+    public products = [];
 
-	ngOnInit(): void {
-		this.data.loadProducts()
-			.subscribe(success => {
-				this.products = this.data.products;
-			});
-	}
-
+    ngOnInit(): void {
+        this.data.loadProducts()
+            .subscribe(success => {
+                this.products = this.data.products;
+            });
+    }
 }
