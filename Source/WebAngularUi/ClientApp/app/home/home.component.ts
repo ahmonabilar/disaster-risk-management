@@ -4,5 +4,5 @@
     templateUrl: './home.component.html'
 })
 export class HomeComponent {
-    title = 'Andamon Gwapo';
+    title = 'Inspire Team';
 }

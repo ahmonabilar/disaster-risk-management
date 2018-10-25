@@ -15,7 +15,7 @@ var AppComponent = /** @class */ (function () {
         this.service = service;
         this.router = router;
         if (service.loginRequired) {
-            this.router.navigate(["/login"]);
+            router.navigate(["/login"]);
         }
     }
     AppComponent = __decorate([

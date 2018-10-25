@@ -25,7 +25,7 @@ var LoginComponent = /** @class */ (function () {
         this.service.login(this.creds)
             .subscribe(function (success) {
             if (success) {
-                _this.router.navigate(["/products"]);
+                _this.router.navigate(["/"]);
             }
         }, function (err) { return _this.errorMessage = "Failed to login"; });
     };

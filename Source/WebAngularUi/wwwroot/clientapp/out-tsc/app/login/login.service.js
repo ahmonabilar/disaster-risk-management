@@ -16,20 +16,22 @@ var LoginService = /** @class */ (function () {
     }
     Object.defineProperty(LoginService.prototype, "loginRequired", {
         get: function () {
-            return this.token.length == 0 || this.tokenExpiration > new Date();
+            var tokenInfo = JSON.parse(localStorage.getItem('tokenInfo'));
+            return tokenInfo === null || tokenInfo.token.length == 0 || tokenInfo.tokenExpiration > new Date();
         },
         enumerable: true,
         configurable: true
     });
     LoginService.prototype.login = function (creds) {
-        var _this = this;
         return this.http
             .post("http://localhost:8888/account/createtoken", creds)
             .pipe(map(function (data) {
-            _this.token = data.token;
-            _this.tokenExpiration = data.expiration;
+            localStorage.setItem('tokenInfo', JSON.stringify({ token: data.token, tokenExpiration: data.expiration }));
             return true;
         }));
+    };
+    LoginService.prototype.logout = function () {
+        localStorage.removeItem('tokenInfo');
     };
     LoginService = __decorate([
         Injectable(),

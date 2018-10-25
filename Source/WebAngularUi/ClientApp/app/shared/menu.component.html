@@ -1,5 +1,19 @@
-﻿<ul>
-    <li><a routerLink="" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
-    <li><a href="#" (click)="logout()" routerLinkActive="active">Logout</a></li>
-</ul>
+﻿<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" routerLink="">DRM System</a>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a (click)="logout()" class="nav-link logout">Sign out</a>
+        </li>
+    </ul>
+    </div>
+</nav>
