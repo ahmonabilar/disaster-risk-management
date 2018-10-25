@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace Drm.WebApi.Controllers
 {
     [Route("api/[Controller]")]
-    [Authorize(AuthenticationSchemes=JwtBearerDefaults.AuthenticationScheme)]
+//    [Authorize(AuthenticationSchemes=JwtBearerDefaults.AuthenticationScheme)]
     public class TestController : Controller
     {
         private readonly IDrmRepository<Test> _testRepository;
@@ -19,7 +19,7 @@ namespace Drm.WebApi.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin,Editor")]
+//        [Authorize(Roles = "Admin,Editor")]
         public IEnumerable<Test> Get()
         {
             return _testRepository.GetAll();

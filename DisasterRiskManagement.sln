@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.WebApi", "Source\WebApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.Data", "Source\Data\Drm.Data.csproj", "{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drm.WebAngularUi", "Source\WebAngularUi\Drm.WebAngularUi.csproj", "{6483261B-A90E-49CF-BC92-796BB309B248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD50AF0D-8BD2-45E7-8A21-26BB9BBFC7A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6483261B-A90E-49CF-BC92-796BB309B248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6483261B-A90E-49CF-BC92-796BB309B248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6483261B-A90E-49CF-BC92-796BB309B248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6483261B-A90E-49CF-BC92-796BB309B248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

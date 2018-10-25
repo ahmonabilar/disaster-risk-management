@@ -50,6 +50,8 @@ namespace Drm.WebApi
             services.AddScoped<IDrmRepository<Test>, TestRepository>();
 
             services.AddMvc();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +67,10 @@ namespace Drm.WebApi
             }
 
             app.UseStaticFiles();
+
+            app.UseCors(
+                options => options.WithOrigins("http://localhost:58989").AllowAnyMethod()
+            );
 
             app.UseAuthentication();
 
