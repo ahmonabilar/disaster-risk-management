@@ -8,7 +8,9 @@
   <ItemGroup>
     <None Remove="ClientApp\app\home\home.component.ts" />
     <None Remove="ClientApp\app\login\login.component.ts" />
+    <None Remove="ClientApp\app\login\login.service.ts" />
     <None Remove="ClientApp\app\product\productList.component.ts" />
+    <None Remove="ClientApp\app\product\products.component.ts" />
     <None Remove="ClientApp\app\services\dataService.ts" />
     <None Remove="ClientApp\app\shared\menu.component.ts" />
   </ItemGroup>
@@ -25,7 +27,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\app\home\home.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\login\login.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\product\productList.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\product\products.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\dataService.ts" />
     <TypeScriptCompile Include="ClientApp\app\shared\menu.component.ts" />
   </ItemGroup>

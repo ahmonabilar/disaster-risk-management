@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -10,7 +11,9 @@ import { ProductsComponent } from './product/products.component';
 import { MenuComponent } from './shared/menu.component';
 
 import { ProductList } from './product/productList.component';
+
 import { DataService } from './services/dataService';
+import { LoginService } from './login/login.service';
 
 import { RouterModule } from '@angular/router';
 
@@ -33,13 +36,15 @@ let routes = [
     imports: [
         BrowserModule,
         HttpClientModule,
+        FormsModule,
         RouterModule.forRoot(routes, {
             useHash: false,
             enableTracing: false //for debugging
         })
     ],
     providers: [
-        DataService
+        DataService,
+        LoginService
     ],
     bootstrap: [
         AppComponent
